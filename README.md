@@ -1,6 +1,6 @@
 App built with ASP.NET CORE 7, PostgreSQL, Angular 15
 
- -MEMBERS FEATURES:
+MEMBERS FEATURES:
  -Account creation
  -Login
  -BMI, RMB, ARTERIAL TENSION, CHOLESTEROL, TRIGLYCERIDES Calculators
