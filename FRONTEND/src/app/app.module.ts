@@ -12,6 +12,18 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AboutComponent } from './components/about/about.component';
+import { CalculatorBmiComponent } from './components/calculators/calculator-bmi/calculator-bmi.component';
+import { CalculatorRmbComponent } from './components/calculators/calculator-rmb/calculator-rmb.component';
+import { CalculatorAtComponent } from './components/calculators/calculator-at/calculator-at.component';
+import { CalculatorColComponent } from './components/calculators/calculator-col/calculator-col.component';
+import { CalculatorTriComponent } from './components/calculators/calculator-tri/calculator-tri.component';
+import { MyaccountComponent } from './components/myaccount/myaccount.component';
+import { ChartBmiComponent } from './components/charts/chart-bmi/chart-bmi.component';
+import { ChartColComponent } from './components/charts/chart-col/chart-col.component';
+import { ChartTriComponent } from './components/charts/chart-tri/chart-tri.component';
+import { ChartAtComponent } from './components/charts/chart-at/chart-at.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import { ChartRmbComponent } from './components/charts/chart-rmb/chart-rmb.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +32,19 @@ import { AboutComponent } from './components/about/about.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    AboutComponent
+    AboutComponent,
+    CalculatorBmiComponent,
+    CalculatorRmbComponent,
+    CalculatorAtComponent,
+    CalculatorColComponent,
+    CalculatorTriComponent,
+    MyaccountComponent,
+    ChartBmiComponent,
+    ChartColComponent,
+    ChartTriComponent,
+    ChartAtComponent,
+    StatisticsComponent,
+    ChartRmbComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,49 @@
+<section class="calculator-section">
+    <div class="container">
+        <div class="calculator">
+            <div class="calculator-text-box">
+                <h2 class="heading-secondary form">Base Metabolic Rate</h2>
+            </div>
+            <form #formDirective="ngForm" class="calculator-form grid-form" (ngSubmit)="calculateRmb()">
+                <div>
+                    <label for="gender">Gender</label>
+                    <select id="gender" type="string" name="gender" [(ngModel)]="model.gender" required>
+                        <option value="male">male</option>
+                        <option value="female">female</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="age">Age</label>
+                    <input id="age" type="number" name="age" [(ngModel)]="model.age" placeholder="25 years" required>
+                </div>
+                <div>
+                    <label for="height">Height</label>
+                    <input id="height" type="number" name="height" [(ngModel)]="model.height" placeholder="175 cm"
+                        required>
+                </div>
+                <div>
+                    <label for="weight">Kilos</label>
+                    <input id="weight" type="number" name="weight" [(ngModel)]="model.weight" placeholder="75 kg"
+                        required>
+                </div>
+                <div>
+                    <label for="activitylevel"> Level of activity </label>
+                    <select id="activitylevel" id="activitylevel" type="string" name="activitylevel"
+                        placeholder="low/mid/high.." [(ngModel)]="model.activitylevel" required>
+                        <option value="veryLow">Very low</option>
+                        <option value="low">Low</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="high">High</option>
+                        <option value="veryHigh">Very high</option>
+                    </select>
+                </div>
+                <button class="btn--form">Calculate</button>
+            </form>
+            <div class="calculator-result">
+                <div class="result">
+                    <p *ngIf="result">Result: {{result}} calories</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
