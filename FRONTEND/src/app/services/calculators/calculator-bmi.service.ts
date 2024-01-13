@@ -22,4 +22,8 @@ export class CalculatorBmiService {
   getUserResults(): Observable<any> {
     return this.http.get(this.baseURL + 'bmi/getUserBmiResults', this.httpOptions);
   };
+
+  getBMIResultsForUser(): Observable<any> {
+    return this.http.get(this.baseURL + 'bmi/getUserBmiResults', this.httpOptions);
+  };
 }

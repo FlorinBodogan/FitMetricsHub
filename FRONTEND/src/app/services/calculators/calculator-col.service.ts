@@ -22,4 +22,8 @@ export class CalculatorColService {
   getColResults(): Observable<any> {
     return this.http.get(this.baseURL + 'cholesterol/cholesterolCategoryStats', this.httpOptions);
   };
+
+  getCOLResultsForUser(): Observable<any> {
+    return this.http.get(this.baseURL + 'cholesterol/getUserCholesterolResults', this.httpOptions);
+  };
 }

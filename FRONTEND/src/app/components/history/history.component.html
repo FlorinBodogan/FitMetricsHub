@@ -1,0 +1,107 @@
+<div class="history">
+    <h1>History</h1>
+
+    <div class="select-wrapper">
+        <label for="tableOption" style="padding-right: 10px;">Tables:</label>
+        <select id="tableOption" [(ngModel)]="selectedTable">
+            <option value="bmi">Body Mass Index</option>
+            <option value="rmb">Basal Metabolic Rate</option>
+            <option value="blood pressure">Blood Pressure</option>
+            <option value="triglycerides">Triglycerides</option>
+            <option value="cholesterol">Cholesterol</option>
+        </select>
+    </div>
+
+    <table *ngIf="selectedTable === 'bmi'">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Result</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bmi of userBMI">
+                <td><strong>{{ bmi.created | date:'dd-MM-yyyy' }}</strong></td>
+                <td>{{bmi.result | number:'1.2-2' }} % body fat</td>
+                <td>{{bmi.category}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table *ngIf="selectedTable === 'rmb'">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rmb of userRMB">
+                <td><strong>{{ rmb.created | date:'dd-MM-yyyy' }}</strong></td>
+                <td>{{ rmb.result }} calories</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table *ngIf="selectedTable === 'blood pressure'">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>SBP</th>
+                <th>DBP</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let at of userAT">
+                <td><strong>{{ at.created | date:'dd-MM-yyyy' }}</strong></td>
+                <td>{{ at.sbp }} mm/HG</td>
+                <td>{{ at.dbp }} mm/HG</td>
+                <td>{{ at.category }} </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table *ngIf="selectedTable === 'triglycerides'">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Chol</th>
+                <th>HDL</th>
+                <th>LDL</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tri of userTR">
+                <td><strong>{{ tri.created | date:'dd-MM-yyyy' }}</strong></td>
+                <td>{{ tri.cholesterol }} mg/dL</td>
+                <td>{{ tri.hdl }} mg/dL</td>
+                <td>{{ tri.ldl }} mg/dL</td>
+                <td>{{ tri.result }} </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table *ngIf="selectedTable === 'cholesterol'">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>HDL</th>
+                <th>LDL</th>
+                <th>Tri</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let col of userCOL">
+                <td><strong>{{ col.created | date:'dd-MM-yyyy' }}</strong></td>
+                <td>{{ col.hdl }} mg/dL</td>
+                <td>{{ col.ldl }} mg/dL</td>
+                <td>{{ col.triglycerides }} mg/dL</td>
+                <td>{{ col.result }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

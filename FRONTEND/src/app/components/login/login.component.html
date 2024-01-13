@@ -4,13 +4,13 @@
             <div class="registration-text-box">
                 <form #loginForm="ngForm" autocomplete="off" class="registration-form" (ngSubmit)="login()">
                     <div>
-                        <label for="user-name">User Name</label>
-                        <input type="text" name="username" [(ngModel)]="loginUser.username" placeholder="Popescu"
+                        <label for="user-name">Username</label>
+                        <input type="text" name="username" [(ngModel)]="loginUser.username" placeholder="David"
                             required />
                     </div>
                     <div>
                         <label for="password">Password</label>
-                        <input type="password" name="password" [(ngModel)]="loginUser.password" placeholder="Parola"
+                        <input type="password" name="password" [(ngModel)]="loginUser.password" placeholder="Pas$$word"
                             required />
                     </div>
                     <button class="btn--form" type="submit">Login</button>

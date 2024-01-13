@@ -22,4 +22,8 @@ export class CalculatorTrService {
   getTriResults(): Observable<any> {
     return this.http.get(this.baseURL + 'triglycerides/triglyceridesCategoryStats', this.httpOptions);
   };
+
+  getTRIResultsForUser(): Observable<any> {
+    return this.http.get(this.baseURL + 'triglycerides/getUserTriglyceridesResults', this.httpOptions);
+  };
 }

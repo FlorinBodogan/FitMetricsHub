@@ -1,34 +1,21 @@
 <div class="userprofile-container">
-    <div class="userprofile">
-        <div class="info-bar">
-            <button class="history-button" routerLink="/history">Istoric</button>
-        </div>
-        <div class="user-photo">
-            <img src="assets/img/user.png" class="img-user" alt="user photo" width="270" height="250">
-            <div class="user-description">
-                Detalii cont:
-                <br>
-                Nume utilizator:
-            </div>
-        </div>
-    </div>
     <div class="flex-container">
         <div class="results-container">
             <div class="card">
-                <h2>Arterial Tension: </h2>
+                <h2>Arterial Tension: {{lastUserATCategory}}</h2>
             </div>
             <div class="card">
-                <h2>Triglycerides: </h2>
+                <h2>Triglycerides: {{lastUserTRCategory}}</h2>
             </div>
             <div class="card">
-                <h2>Cholesterol: </h2>
+                <h2>Cholesterol: {{lastUserCOLCategory}}</h2>
             </div>
         </div>
         <div class="options">
-            <p class="options-p">Alegeți graficul:</p>
+            <p class="options-p">Choose Stats:</p>
             <select id="tableOption" class="tableOption" [(ngModel)]="selectedComponent">
-                <option value="BMI">Indice Masă Corporală</option>
-                <option value="RMB">Rată Metabolică Bazală</option>
+                <option value="BMI">Body Index Mass</option>
+                <option value="RMB">Base Metabolic Rate</option>
             </select>
         </div>
         <div class="chart-box">

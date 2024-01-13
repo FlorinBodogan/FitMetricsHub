@@ -6,12 +6,14 @@
                     <div>
                         <label for="user-name">Username</label>
                         <input type="text" formControlName="username" placeholder="John" />
+                        <span class="invalid-feedback">{{getErrorsMessageUsername()}}</span>
                     </div>
                     <div>
                         <label for="password">Password</label>
                         <input type="password" formControlName="password" placeholder="Password" />
+                        <span class="invalid-feedback">{{getErrorsMessagePassword()}}</span>
                     </div>
-                    <button class="btn--form">Create Account</button>
+                    <button class="btn--form">Create</button>
                 </form>
             </div>
         </div>

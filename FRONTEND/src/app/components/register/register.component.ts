@@ -32,10 +32,6 @@ export class RegisterComponent implements OnInit {
     });
   };
 
-  checkClassInvalid(param: string, submitted: boolean) {
-    return this.registerForm.get(param)?.errors && this.registerForm.get(param)?.touched || this.registerForm.get(param)?.errors && submitted ? true : false;
-  };
-
   register(): void {
     if (this.registerForm.invalid) {
       this.submitted = true;
@@ -65,26 +61,32 @@ export class RegisterComponent implements OnInit {
   };
 
   getErrorsMessageUsername(): string {
-    if (this.registerForm.get('username')?.hasError('required')) {
-      return 'Please enter an username.';
-    } else if (this.registerForm.get('username')?.hasError('minlength')) {
-      return "Username it's too short.";
-    } else if (this.registerForm.get('username')?.hasError('maxlength')) {
-      return "Username it's too long.";
-    } else if (this.registerForm.get('username')?.hasError('pattern')) {
-      return "Username must contain only lowercase letters.";
-    } else return '';
+    if (this.submitted) {
+      if (this.registerForm.get('username')?.hasError('required')) {
+        return 'Please enter a username.';
+      } else if (this.registerForm.get('username')?.hasError('minlength')) {
+        return "Username is too short.";
+      } else if (this.registerForm.get('username')?.hasError('maxlength')) {
+        return "Username is too long.";
+      } else if (this.registerForm.get('username')?.hasError('pattern')) {
+        return "Username must contain only lowercase letters.";
+      }
+    }
+    return '';
   };
 
   getErrorsMessagePassword(): string {
-    if (this.registerForm.get('password')?.hasError('required')) {
-      return 'Please enter a password.';
-    } else if (this.registerForm.get('password')?.hasError('minlength')) {
-      return "Password it's too short.";
-    } else if (this.registerForm.get('password')?.hasError('maxlength')) {
-      return "Password it's too long.";
-    } else if (this.registerForm.get('password')?.hasError('pattern')) {
-      return "Password must contain at least one uppercase letter, one digit, and one special character.";
-    } else return '';
+    if (this.submitted) {
+      if (this.registerForm.get('password')?.hasError('required')) {
+        return 'Please enter a password.';
+      } else if (this.registerForm.get('password')?.hasError('minlength')) {
+        return "Password it's too short.";
+      } else if (this.registerForm.get('password')?.hasError('maxlength')) {
+        return "Password it's too long.";
+      } else if (this.registerForm.get('password')?.hasError('pattern')) {
+        return "Password must contain at least one uppercase letter, one digit, and one special character.";
+      }
+    }
+    return '';
   };
 }

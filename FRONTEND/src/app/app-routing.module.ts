@@ -12,6 +12,8 @@ import { CalculatorColComponent } from './components/calculators/calculator-col/
 import { CalculatorTriComponent } from './components/calculators/calculator-tri/calculator-tri.component';
 import { MyaccountComponent } from './components/myaccount/myaccount.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
+import { HistoryComponent } from './components/history/history.component';
+import { nonAuthGuard } from './services/guards/non-auth.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,10 +29,11 @@ const routes: Routes = [
       { path: 'calculator-tri', component: CalculatorTriComponent },
       { path: 'myAccount', component: MyaccountComponent },
       { path: 'statistics', component: StatisticsComponent },
+      { path: 'history', component: HistoryComponent },
     ]
   },
-  { path: 'register', component: RegisterComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent, canActivate: [nonAuthGuard] },
+  { path: 'login', component: LoginComponent, canActivate: [nonAuthGuard] },
   { path: 'about', component: AboutComponent },
   { path: '**', component: HomeComponent, pathMatch: 'full' },
 ];

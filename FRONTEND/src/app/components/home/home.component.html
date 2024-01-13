@@ -1,13 +1,24 @@
 <div class="home container">
     <section class="hero-section">
         <div class="home-container">
-            <div class="hero-text-box">
+            <div class="hero-text-box" *ngIf="!(accountService.currentUser$| async)">
                 <h3 class="heading-tertiary heading-tertiary--hero">- We Provide</h3>
                 <h1 class="heading-primary heading-primary--hero">The perfect app for your health</h1>
                 <p class="hero-text">
                     Start now to improve your health
                 </p>
                 <a routerLink="/login" class="btn btn--home">Get started</a>
+            </div>
+
+            <div class="hero-text-box" *ngIf="accountService.currentUser$ | async as user">
+                <h1 class="heading-primary heading-primary--hero">Welcome back, {{ user.username }}!</h1>
+                <p class="hero-text">
+                    Explore a healthier and balanced lifestyle with us. Check your progress using the app calculators
+                    and
+                    continue
+                    your journey towards well-being.
+                </p>
+                <a routerLink="/calculator-bmi" class="btn btn--home">Calculator</a>
             </div>
         </div>
     </section>

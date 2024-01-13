@@ -20,7 +20,7 @@ export class NavbarComponent {
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
-    this.sticky = window.pageYOffset >= 5;
+    // this.sticky = window.pageYOffset >= 50;
   }
 
   //MOBILE NAV

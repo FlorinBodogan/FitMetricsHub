@@ -22,4 +22,8 @@ export class CalculatorRmbService {
   getUserResults(): Observable<any> {
     return this.http.get(this.baseURL + 'rmb/getUserRmbResults', this.httpOptions);
   };
+
+  getRMBResultsForUser(): Observable<any> {
+    return this.http.get(this.baseURL + 'rmb/getUserRmbResults', this.httpOptions);
+  };
 }

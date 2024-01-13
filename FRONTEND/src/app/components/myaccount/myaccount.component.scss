@@ -3,21 +3,17 @@
     text-align: center;
     background-image: url(/assets/img/userprofile2.jpg);
     background-size: cover;
-}
-
-.userprofile {
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
     height: 90vh;
-    width: 30vw;
 }
 
 .flex-container {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     align-items: center;
+    justify-content: center;
 }
 
 .options {
@@ -33,9 +29,10 @@
 }
 
 .results-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 15vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .tableOption {
@@ -61,55 +58,14 @@ option:hover {
     background-color: #2cd929;
 }
 
-.info-bar {
-    height: 18vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 4vh;
-}
-
-.history-button {
-    cursor: pointer;
-    font-size: 2rem;
-    padding: 1rem 8vw;
-    color: #FFF;
-    background-color: #222;
-    border-radius: 8px;
-    transition: all 0.3s;
-}
-
-.history-button:hover {
-    background-color: #000;
-    color: #2cd929;
-    border: 2px solid #2cd929;
-}
-
-.user-name {
-    color: #eee;
-    font-size: 4.8rem;
-    line-height: 1.6rem;
-    padding-top: 12vh;
-    margin-bottom: 4.8rem;
-}
-
-.user-photo {
-    margin-bottom: 2.4rem;
-}
-
-.img-user {
-    margin-bottom: 3rem;
-}
-
-.user-description {
-    color: #fff;
-    font-size: 2.4rem;
+.chart-box {
+    width: 100%;
 }
 
 /* -------CARDS------------- */
 
 .card {
-    width: 190px;
+    width: 220px;
     height: 80px;
     background: #4b6444;
     position: relative;
@@ -131,7 +87,7 @@ option:hover {
 .card::before {
     content: '';
     position: absolute;
-    width: 100px;
+    width: 120px;
     background-image: linear-gradient(180deg, #2cd929, #edf906);
     height: 250%;
     animation: rotBGimg 3s linear infinite;
@@ -154,4 +110,16 @@ option:hover {
     background: #161313;
     inset: 5px;
     border-radius: 15px;
+}
+
+@media(max-width: 700px) {
+    .card {
+        width: 120px;
+        height: 60px;
+        gap: 1rem;
+    }
+
+    .card h2 {
+        font-size: 1.2rem;
+    }
 }

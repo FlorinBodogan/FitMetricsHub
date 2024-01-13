@@ -22,4 +22,8 @@ export class CalculatorAtService {
   getATResults(): Observable<any> {
     return this.http.get(this.baseURL + 'arterialtension/arterialTensionCategoryStats', this.httpOptions);
   };
+
+  getATResultsForUser(): Observable<any> {
+    return this.http.get(this.baseURL + 'arterialtension/getUserArterialTensionResults', this.httpOptions);
+  };
 }

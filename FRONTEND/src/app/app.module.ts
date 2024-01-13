@@ -24,6 +24,7 @@ import { ChartTriComponent } from './components/charts/chart-tri/chart-tri.compo
 import { ChartAtComponent } from './components/charts/chart-at/chart-at.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { ChartRmbComponent } from './components/charts/chart-rmb/chart-rmb.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ChartRmbComponent } from './components/charts/chart-rmb/chart-rmb.compo
     ChartTriComponent,
     ChartAtComponent,
     StatisticsComponent,
-    ChartRmbComponent
+    ChartRmbComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
