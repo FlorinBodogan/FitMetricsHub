@@ -80,7 +80,8 @@ namespace BACKEND.Data.Migrations
                     Id = table.Column<string>(type: "text", nullable: false),
                     Sbp = table.Column<int>(type: "integer", nullable: false),
                     Dbp = table.Column<int>(type: "integer", nullable: false),
-                    Result = table.Column<string>(type: "text", nullable: true),
+                    Result = table.Column<int>(type: "integer", nullable: false),
+                    Category = table.Column<string>(type: "text", nullable: true),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UserId = table.Column<string>(type: "text", nullable: true)
                 },
@@ -185,7 +186,10 @@ namespace BACKEND.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "text", nullable: false),
-                    Category = table.Column<double>(type: "double precision", nullable: false),
+                    Category = table.Column<string>(type: "text", nullable: true),
+                    Result = table.Column<double>(type: "double precision", nullable: false),
+                    Height = table.Column<int>(type: "integer", nullable: false),
+                    Weight = table.Column<int>(type: "integer", nullable: false),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UserId = table.Column<string>(type: "text", nullable: true)
                 },
@@ -209,7 +213,8 @@ namespace BACKEND.Data.Migrations
                     Hdl = table.Column<int>(type: "integer", nullable: false),
                     Ldl = table.Column<int>(type: "integer", nullable: false),
                     Triglycerides = table.Column<int>(type: "integer", nullable: false),
-                    Result = table.Column<string>(type: "text", nullable: true),
+                    Result = table.Column<int>(type: "integer", nullable: false),
+                    Category = table.Column<string>(type: "text", nullable: true),
                     UserId = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
@@ -229,6 +234,12 @@ namespace BACKEND.Data.Migrations
                 {
                     Id = table.Column<string>(type: "text", nullable: false),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    Result = table.Column<double>(type: "double precision", nullable: false),
+                    Gender = table.Column<string>(type: "text", nullable: true),
+                    Age = table.Column<int>(type: "integer", nullable: false),
+                    Height = table.Column<int>(type: "integer", nullable: false),
+                    Weight = table.Column<int>(type: "integer", nullable: false),
+                    ActivityLevel = table.Column<string>(type: "text", nullable: true),
                     UserId = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
@@ -250,6 +261,8 @@ namespace BACKEND.Data.Migrations
                     Hdl = table.Column<int>(type: "integer", nullable: false),
                     Ldl = table.Column<int>(type: "integer", nullable: false),
                     Cholesterol = table.Column<int>(type: "integer", nullable: false),
+                    Result = table.Column<int>(type: "integer", nullable: false),
+                    Category = table.Column<string>(type: "text", nullable: true),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UserId = table.Column<string>(type: "text", nullable: true)
                 },

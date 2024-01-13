@@ -1,0 +1,49 @@
+<header [class.sticky]="sticky" [ngClass]="menuClass">
+    <div class="nav container">
+        <nav class="nav-bar">
+            <div class="brand-name" routerLink="/">
+                <span>FitMetrics</span>
+                <span class="brand-name-hub">Hub</span>
+            </div>
+            <ul class="nav-bar-list">
+                <li (click)="selectPage()"><a class="nav-bar-link" routerLink="/about"
+                        routerLinkActive="active">About</a></li>
+                <li *ngIf="accountService.currentUser$| async">
+                    <div class="dropdown">
+                        <button class="dropbtn">Calculator</button>
+                        <div class="dropdown-content">
+                            <a (click)="selectPage()" class="nav-bar-link" routerLink="/calculator"
+                                routerLinkActive="active">Calculator RMB</a>
+                            <a (click)="selectPage()" class="nav-bar-link" routerLink="/calculatorBMI"
+                                routerLinkActive="active">Calculator BMI</a>
+                            <a (click)="selectPage()" class="nav-bar-link" routerLink="/calculatorAT"
+                                routerLinkActive="active">Calculator AT</a>
+                            <a (click)="selectPage()" class="nav-bar-link" routerLink="/calculatorTR"
+                                routerLinkActive="active">Calculator Triglyceride</a>
+                            <a (click)="selectPage()" class="nav-bar-link" routerLink="/calculatorCOL"
+                                routerLinkActive="active">Calculator Cholesterol</a>
+                        </div>
+                    </div>
+                </li>
+                <li *ngIf="accountService.currentUser$| async" (click)="selectPage()"><a class="nav-bar-link"
+                        routerLink="/userprofile" routerLinkActive="active">My Account</a></li>
+                <li *ngIf="accountService.currentUser$| async" (click)="selectPage()"><a class="nav-bar-link"
+                        routerLink="/statistics" routerLinkActive="active">Statistics</a></li>
+                <li *ngIf="accountService.currentUser$| async" (click)="selectPage()"><a class="nav-bar-link"
+                        routerLink="/ControlPanel" routerLinkActive="active">Dashboard</a></li>
+                <li *ngIf="!(accountService.currentUser$| async)" (click)="selectPage()"><a class="nav-bar-link"
+                        routerLink="/login" routerLinkActive="active">Login</a></li>
+                <li *ngIf="!(accountService.currentUser$| async)" (click)="selectPage()"><a class="nav-bar-link"
+                        routerLink="/register" routerLinkActive="active">Register</a></li>
+                <li *ngIf="accountService.currentUser$| async" (click)="selectPage()"><a class="btns btn--nav"
+                        (click)="logout()" routerLink="/login">Logout</a>
+                </li>
+            </ul>
+            <button class="btn-mobile-nav" (click)="toggleMenu()">
+                <div *ngIf="!isMenuOpen" class="icon"><mat-icon class="menu-icon">menu</mat-icon></div>
+                <div *ngIf="isMenuOpen" class="icon"><mat-icon class="close-icon">close</mat-icon></div>
+            </button>
+
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,19 @@
+<section class="registration-section">
+    <div class="container">
+        <div class="registration">
+            <div class="registration-text-box">
+                <form [formGroup]="registerForm" (ngSubmit)="register()" class="registration-form">
+                    <div>
+                        <label for="user-name">Username</label>
+                        <input type="text" formControlName="username" placeholder="John" />
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" formControlName="password" placeholder="Password" />
+                    </div>
+                    <button class="btn--form">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

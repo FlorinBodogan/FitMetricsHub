@@ -7,7 +7,8 @@ namespace BACKEND.Entities
         public int Hdl { get; set; }
         public int Ldl { get; set; }
         public int Triglycerides { get; set; }
-        public string Result { get; set; }
+        public int Result { get; set; }
+        public string Category { get; set; }
         public User User { get; set; }
         public string UserId { get; set; }
     }

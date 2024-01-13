@@ -27,14 +27,17 @@ namespace BACKEND.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("text");
 
+                    b.Property<string>("Category")
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("Dbp")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Result")
-                        .HasColumnType("text");
+                    b.Property<int>("Result")
+                        .HasColumnType("integer");
 
                     b.Property<int>("Sbp")
                         .HasColumnType("integer");
@@ -54,14 +57,23 @@ namespace BACKEND.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("text");
 
-                    b.Property<double>("Category")
-                        .HasColumnType("double precision");
+                    b.Property<string>("Category")
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<int>("Height")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Result")
+                        .HasColumnType("double precision");
+
                     b.Property<string>("UserId")
                         .HasColumnType("text");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -75,6 +87,9 @@ namespace BACKEND.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("text");
 
+                    b.Property<string>("Category")
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
@@ -84,8 +99,8 @@ namespace BACKEND.Data.Migrations
                     b.Property<int>("Ldl")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Result")
-                        .HasColumnType("text");
+                    b.Property<int>("Result")
+                        .HasColumnType("integer");
 
                     b.Property<int>("Triglycerides")
                         .HasColumnType("integer");
@@ -105,11 +120,29 @@ namespace BACKEND.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("text");
 
+                    b.Property<string>("ActivityLevel")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("Created")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<string>("Gender")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Height")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Result")
+                        .HasColumnType("double precision");
+
                     b.Property<string>("UserId")
                         .HasColumnType("text");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -149,6 +182,9 @@ namespace BACKEND.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("text");
 
+                    b.Property<string>("Category")
+                        .HasColumnType("text");
+
                     b.Property<int>("Cholesterol")
                         .HasColumnType("integer");
 
@@ -159,6 +195,9 @@ namespace BACKEND.Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int>("Ldl")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Result")
                         .HasColumnType("integer");
 
                     b.Property<string>("UserId")
