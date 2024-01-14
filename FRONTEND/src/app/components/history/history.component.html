@@ -39,7 +39,7 @@
         <tbody>
             <tr *ngFor="let rmb of userRMB">
                 <td><strong>{{ rmb.created | date:'dd-MM-yyyy' }}</strong></td>
-                <td>{{ rmb.result }} calories</td>
+                <td>{{ rmb.result | number: '1.0-0' }} calories</td>
             </tr>
         </tbody>
     </table>

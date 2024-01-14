@@ -86,7 +86,7 @@ h1 {
 .heading-secondary {
     font-size: 4.4rem;
     line-height: 1.2;
-    margin-bottom: 9.6rem;
+    margin-bottom: 3rem;
     color: #444;
 }
 
@@ -280,6 +280,7 @@ h1 {
 @media(max-width:58.625em) {
     .calculator .heading-secondary {
         font-size: 3rem;
+        margin-bottom: 1rem;
     }
 
     .grid-form {
@@ -290,7 +291,7 @@ h1 {
     .calculator-form {
         display: flex;
         flex-direction: column;
-        padding: 1rem 4rem 4rem 2.5rem;
+        padding: 2rem 4rem 4rem 2.5rem;
         border-top: 0.5px solid #004747;
     }
 

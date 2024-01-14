@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -19,6 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         ToastrModule.forRoot({
             positionClass: 'toast-top-right'
         }),
+        NgxSpinnerModule.forRoot({
+            type: 'ball-clip-rotate'
+        }),
     ],
     exports: [
         BrowserAnimationsModule,
@@ -26,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         FormsModule,
         ReactiveFormsModule,
         ToastrModule,
+        NgxSpinnerModule
     ]
 })
 export class SharedModule { }

@@ -41,7 +41,7 @@
             </form>
             <div class="calculator-result">
                 <div class="result">
-                    <p *ngIf="result">Result: {{result}} calories</p>
+                    <p *ngIf="result">Result: {{ result | number: '1.0-0' }} calories</p>
                 </div>
             </div>
         </div>

@@ -25,6 +25,7 @@ import { ChartAtComponent } from './components/charts/chart-at/chart-at.componen
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { ChartRmbComponent } from './components/charts/chart-rmb/chart-rmb.component';
 import { HistoryComponent } from './components/history/history.component';
+import { LoadingEffectInterceptor } from './services/interceptors/loading-effect.interceptor';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,10 @@ import { HistoryComponent } from './components/history/history.component';
     HttpClientModule,
     SharedModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingEffectInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

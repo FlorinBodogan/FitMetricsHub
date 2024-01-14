@@ -5,12 +5,12 @@
                 <form [formGroup]="registerForm" (ngSubmit)="register()" class="registration-form">
                     <div>
                         <label for="user-name">Username</label>
-                        <input type="text" formControlName="username" placeholder="John" />
+                        <input type="text" formControlName="username" placeholder="john" />
                         <span class="invalid-feedback">{{getErrorsMessageUsername()}}</span>
                     </div>
                     <div>
                         <label for="password">Password</label>
-                        <input type="password" formControlName="password" placeholder="Password" />
+                        <input type="password" formControlName="password" placeholder="%Password123" />
                         <span class="invalid-feedback">{{getErrorsMessagePassword()}}</span>
                     </div>
                     <button class="btn--form">Create</button>
