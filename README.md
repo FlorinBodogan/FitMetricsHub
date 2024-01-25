@@ -1,4 +1,4 @@
-App built with ASP.NET CORE 7, PostgreSQL, Angular 15
+Full-Stack App built with ASP.NET CORE 7, PostgreSQL, Angular 15 and Angular Material
 
 MEMBERS FEATURES:
 
