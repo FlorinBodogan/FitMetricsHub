@@ -4,7 +4,8 @@
             <div class="calculator-text-box">
                 <h2 class="heading-secondary form">Base Metabolic Rate</h2>
             </div>
-            <form #formDirective="ngForm" class="calculator-form grid-form" (ngSubmit)="calculateRmb()">
+            <form #formDirective="ngForm" class="calculator-form grid-form"
+                (ngSubmit)="calculateRmb(); formDirective.reset()">
                 <div>
                     <label for="gender">Gender</label>
                     <select id="gender" type="string" name="gender" [(ngModel)]="model.gender" required>

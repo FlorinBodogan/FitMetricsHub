@@ -4,8 +4,8 @@
             <div class="calculator-text-box">
                 <h2 class="heading-secondary form">Arterial Tension</h2>
             </div>
-            <form #form="ngForm" (ngSubmit)="calculateAT()" #formDirective="ngForm" class="calculator-form grid-form"
-                action="#">
+            <form #form="ngForm" (ngSubmit)="calculateAT(); form.reset()" #formDirective="ngForm"
+                class="calculator-form grid-form" action="#">
                 <div>
                     <label for="sbp">Sistolic Blood Pressure</label>
                     <input id="sbp" type="number" name="sbp" [(ngModel)]="model.sbp" placeholder="55 mm/HG" required>

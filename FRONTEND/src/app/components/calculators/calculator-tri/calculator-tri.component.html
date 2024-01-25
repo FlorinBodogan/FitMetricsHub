@@ -4,7 +4,8 @@
             <div class="calculator-text-box">
                 <h2 class="heading-secondary form">Tryglicerides</h2>
             </div>
-            <form #formDirective="ngForm" class="calculator-form grid-form" (ngSubmit)="calculateTri()">
+            <form #formDirective="ngForm" class="calculator-form grid-form"
+                (ngSubmit)="calculateTri(); formDirective.reset()">
                 <div>
                     <label for="colesterol">Cholesterol</label>
                     <input id="colesterol" type="number" name="cholesterol" [(ngModel)]="model.cholesterol"

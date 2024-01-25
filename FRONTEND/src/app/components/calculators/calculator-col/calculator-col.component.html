@@ -4,7 +4,8 @@
             <div class="calculator-text-box">
                 <h2 class="heading-secondary form">Cholesterol</h2>
             </div>
-            <form #formDirective="ngForm" class="calculator-form grid-form" (ngSubmit)="calculateCOL()">
+            <form #formDirective="ngForm" class="calculator-form grid-form"
+                (ngSubmit)="calculateCOL(); formDirective.reset()">
                 <div>
                     <label for="hdl">HDL</label>
                     <input id="hdl" type="number" name="hdl" [(ngModel)]="model.hdl" placeholder="55 mg/dL" required>
