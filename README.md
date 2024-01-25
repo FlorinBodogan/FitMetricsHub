@@ -9,4 +9,10 @@ MEMBERS FEATURES:
 - Archive with all the results of various calculus
 - General statistics, where all users are included
 
+ADMIN FEATURES:
+
+- Access to the admin dashboard
+- Statistics for users
+- Options to edit, lock, and delete user accounts
+
 Demo: [here](https://fitmetricshub.fly.dev/)
