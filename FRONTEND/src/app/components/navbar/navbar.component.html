@@ -31,6 +31,9 @@
                         routerLink="/history" routerLinkActive="active">Archive</a></li>
                 <li *ngIf="accountService.currentUser$| async" (click)="selectPage()"><a class="nav-bar-link"
                         routerLink="/statistics" routerLinkActive="active">Statistics</a></li>
+                <li *ngIf="accountService.currentUser$| async" (click)="selectPage()"><a
+                        *appHasRole="['Admin', 'Moderator']" class="nav-bar-link" routerLink="/admin"
+                        routerLinkActive="active">Admin</a></li>
                 <li *ngIf="!(accountService.currentUser$| async)" (click)="selectPage()"><a class="nav-bar-link"
                         routerLink="/login" routerLinkActive="active">Login</a></li>
                 <li *ngIf="!(accountService.currentUser$| async)" (click)="selectPage()"><a class="nav-bar-link"
@@ -43,7 +46,6 @@
                 <div *ngIf="!isMenuOpen" class="icon"><mat-icon class="menu-icon">menu</mat-icon></div>
                 <div *ngIf="isMenuOpen" class="icon"><mat-icon class="close-icon">close</mat-icon></div>
             </button>
-
         </nav>
     </div>
 </header>

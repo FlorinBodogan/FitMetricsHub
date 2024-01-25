@@ -1,0 +1,58 @@
+<div class="admin-container">
+    <mat-tab-group backgroundColor="accent" class="tab-group">
+        <mat-tab label="Statistics" *appHasRole="['Admin', 'Moderator']">
+            <div class="statistics">
+                <canvas id="chartUsers" #chartUsers>{{ chartUsers }}</canvas>
+            </div>
+        </mat-tab>
+        <mat-tab label="Users Management" *appHasRole="['Admin']">
+            <mat-table [dataSource]="dataSource" class="mat-elevation-z8 table" *appHasRole="['Admin', 'Moderator']">
+                <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef [style.background-color]="backgroundColorHeader"> Name
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let user" [style.background-color]="backgroundColorRow">
+                        {{user.userName}}
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="roles">
+                    <mat-header-cell *matHeaderCellDef [style.background-color]="backgroundColorHeader"> Roles
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let user" [style.background-color]="backgroundColorRow">
+                        {{user.roles}}
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <mat-header-cell *matHeaderCellDef
+                        [style.background-color]="backgroundColorHeader">Actions</mat-header-cell>
+                    <mat-cell *matCellDef="let user" [style.background-color]="backgroundColorRow">
+                        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">Options</button>
+
+                        <mat-menu #menu="matMenu" class="user-menu">
+                            <button mat-menu-item (click)="openDialogRoles(user)">
+                                <mat-icon aria-hidden="false" class="mat-menu-item">edit</mat-icon>
+                                <span class="mat-menu-item">Roles</span>
+                            </button>
+                            <button mat-menu-item (click)="lockMember(user.id, user.userName)">
+                                <mat-icon aria-hidden="false" class="mat-menu-item">enhanced_encryption</mat-icon>
+                                <span class="mat-menu-item">Ban</span>
+                            </button>
+                            <button mat-menu-item (click)="unlockMember(user.id, user.userName)">
+                                <mat-icon aria-hidden="false" class="mat-menu-item">no_encryption</mat-icon>
+                                <span class="mat-menu-item">Unban</span>
+                            </button>
+                            <button mat-menu-item (click)="openConfirmDialog(user.id, user.userName)">
+                                <mat-icon aria-hidden="false" class="mat-menu-item">delete</mat-icon>
+                                <span class="mat-menu-item">Delete</span>
+                            </button>
+                        </mat-menu>
+                    </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+        </mat-tab>
+    </mat-tab-group>
+</div>

@@ -26,6 +26,10 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
 import { ChartRmbComponent } from './components/charts/chart-rmb/chart-rmb.component';
 import { HistoryComponent } from './components/history/history.component';
 import { LoadingEffectInterceptor } from './services/interceptors/loading-effect.interceptor';
+import { AdminComponent } from './components/admin/admin.component';
+import { HasRoleDirective } from './directives/has-role.directive';
+import { ConfirmDialogComponent } from './components/admin/dialogs/confirm-dialog/confirm-dialog.component';
+import { EditRolesDialogComponent } from './components/admin/dialogs/edit-roles-dialog/edit-roles-dialog.component';
 
 @NgModule({
   declarations: [
@@ -47,13 +51,17 @@ import { LoadingEffectInterceptor } from './services/interceptors/loading-effect
     ChartAtComponent,
     StatisticsComponent,
     ChartRmbComponent,
-    HistoryComponent
+    HistoryComponent,
+    AdminComponent,
+    ConfirmDialogComponent,
+    EditRolesDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    HasRoleDirective
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

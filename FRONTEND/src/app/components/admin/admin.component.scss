@@ -1,0 +1,61 @@
+.admin-container {
+    height: 90vh;
+    width: 100vw;
+    background-color: #111;
+    padding: 1rem;
+}
+
+.statistics {
+    height: 80vh;
+    padding: 1rem;
+}
+
+.canva {
+    background-color: #181818;
+    margin: 1rem;
+    padding: 1rem 0 1rem 0;
+    height: 80vh;
+}
+
+.table {
+    background-color: #111;
+    padding: 1rem;
+
+    .mat-column-name {
+        color: #fff;
+        font-size: 1.8rem;
+        display: flex;
+        flex: 0 0 45%;
+    }
+
+    .mat-column-roles {
+        color: #fff;
+        font-size: 1.8rem;
+        display: flex;
+        flex: 0 0 40%;
+    }
+
+    .mat-column-actions {
+        color: #fff;
+        font-size: 1.8rem;
+        flex: 0 0 15%;
+    }
+}
+
+@media (max-width: 500px) {
+    .table {
+        .mat-column-name {
+            flex: 0 0 30%;
+        }
+
+        .mat-column-roles {
+            flex: 0 0 1;
+        }
+
+        .mat-column-actions {
+            color: #fff;
+            font-size: 1.8rem;
+            flex: 0 0 30%;
+        }
+    }
+}

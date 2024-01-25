@@ -1,0 +1,21 @@
+.dialog-container {
+    height: 400px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+
+    .header {
+        font-size: 1.5rem;
+        color: #fff;
+        margin-bottom: 2rem;
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}

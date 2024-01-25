@@ -6,6 +6,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
     declarations: [
@@ -23,6 +31,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         NgxSpinnerModule.forRoot({
             type: 'ball-clip-rotate'
         }),
+        MatInputModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatTableModule,
+        MatDialogModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatTabsModule
     ],
     exports: [
         BrowserAnimationsModule,
@@ -30,7 +46,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         FormsModule,
         ReactiveFormsModule,
         ToastrModule,
-        NgxSpinnerModule
+        NgxSpinnerModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatTableModule,
+        MatDialogModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatTabsModule
     ]
 })
 export class SharedModule { }
