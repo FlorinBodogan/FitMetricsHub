@@ -5,7 +5,7 @@
                 <canvas id="chartUsers" #chartUsers>{{ chartUsers }}</canvas>
             </div>
         </mat-tab>
-        <mat-tab label="Users Management" *appHasRole="['Admin']">
+        <mat-tab label="Users" *appHasRole="['Admin']">
             <mat-table [dataSource]="dataSource" class="mat-elevation-z8 table" *appHasRole="['Admin', 'Moderator']">
                 <ng-container matColumnDef="name">
                     <mat-header-cell *matHeaderCellDef [style.background-color]="backgroundColorHeader"> Name

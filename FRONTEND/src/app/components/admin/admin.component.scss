@@ -47,7 +47,14 @@
 }
 
 @media (max-width: 500px) {
+    .admin-container {
+
+        padding: 1rem 3px 1rem 3px;
+    }
+
     .table {
+        padding: 1rem 0 1rem 0;
+
         .mat-column-name {
             flex: 0 0 30%;
         }

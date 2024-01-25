@@ -21,3 +21,9 @@
         text-transform: uppercase;
     }
 }
+
+@media (max-width: 500px) {
+    .container {
+        width: 25rem;
+    }
+}

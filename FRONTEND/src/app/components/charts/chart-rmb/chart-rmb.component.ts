@@ -30,7 +30,7 @@ export class ChartRmbComponent {
           {
             label: 'Result',
             data: this.resultsArray,
-            backgroundColor: '#04ff00e1',
+            backgroundColor: '#f2ff00d5',
           },
         ],
       },

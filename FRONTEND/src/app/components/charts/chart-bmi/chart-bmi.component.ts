@@ -31,7 +31,7 @@ export class ChartBmiComponent implements OnInit {
           {
             label: 'Result',
             data: this.resultsArray,
-            backgroundColor: '#f2ff00d5',
+            backgroundColor: '#04ff00e1',
           },
         ],
       },
