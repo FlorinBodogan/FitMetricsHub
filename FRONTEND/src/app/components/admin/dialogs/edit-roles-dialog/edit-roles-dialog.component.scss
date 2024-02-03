@@ -19,3 +19,9 @@
     justify-content: center;
     align-content: center;
 }
+
+@media (max-width:500px) {
+    .dialog-container {
+        width: 80vw;
+    }
+}

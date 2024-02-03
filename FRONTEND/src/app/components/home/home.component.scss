@@ -37,9 +37,13 @@
     animation: fadeIn 3s;
 }
 
+.user-name {
+    color: #3eb058;
+}
+
 .hero-text {
     font-size: 2rem;
-    line-height: 2.5rem;
+    line-height: 3rem;
     color: #d4d4d4;
     margin-bottom: 4.8rem;
 }
@@ -166,7 +170,7 @@
 
     .hero-text {
         font-size: 1.8rem;
-        line-height: 1.6rem;
+        line-height: 2.5rem;
         margin-bottom: 3.5rem;
     }
 }
@@ -183,10 +187,6 @@
     .heading-tertiary--hero {
         margin-bottom: 1.6rem;
         font-size: 1.6rem;
-    }
-
-    .hero-text {
-        display: none;
     }
 
     .btn--home {
@@ -209,10 +209,6 @@
         font-size: 1.4rem;
     }
 
-    .hero-text {
-        display: none;
-    }
-
     .btn--home {
         font-size: 1.2rem;
         padding: 1.2rem 2.4rem;
@@ -231,10 +227,6 @@
     .heading-tertiary--hero {
         margin-bottom: 1.2rem;
         font-size: 1.4rem;
-    }
-
-    .hero-text {
-        display: none;
     }
 
     .btn--home {
