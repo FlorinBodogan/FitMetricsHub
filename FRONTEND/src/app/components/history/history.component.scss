@@ -158,3 +158,22 @@ tbody:hover tr:hover td {
         font-size: 1.1rem;
     }
 }
+
+@media(max-width: 400px) {
+    .title {
+        font-size: 2.8rem;
+    }
+
+    .select-wrapper select {
+        padding: 8px;
+        width: 155px;
+    }
+
+    .select-wrapper label {
+        font-size: 1.8rem;
+    }
+
+    .delete-button {
+        margin-left: 0.8rem;
+    }
+}
