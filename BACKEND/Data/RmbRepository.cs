@@ -88,5 +88,22 @@ namespace BACKEND.Data
             var rmbEntities = await context.RMBs.Where(r => r.UserId == userId).ToListAsync();
             return mapper.Map<List<RmbDto>>(rmbEntities);
         }
+
+        public async Task<int> DeleteUserRmbs(string userId)
+        {
+            var userRmbs = this.context.RMBs.Where(u => u.UserId == userId).ToList();
+
+            foreach (var rmb in userRmbs.ToList())
+            {
+                if (double.IsInfinity(rmb.Result))
+                {
+                    userRmbs.Remove(rmb);
+                }
+            }
+
+            this.context.RemoveRange(userRmbs);
+
+            return await this.context.SaveChangesAsync();
+        }
     }
 }

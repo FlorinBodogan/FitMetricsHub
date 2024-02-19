@@ -26,4 +26,9 @@ export class CalculatorAtService {
   getATResultsForUser(): Observable<any> {
     return this.http.get(this.baseURL + 'arterialtension/getUserArterialTensionResults', this.httpOptions);
   };
+
+  deleteUserATs(): Observable<any> {
+    const url = `${this.baseURL}arterialtension/deleteATs`;
+    return this.http.delete(url, { responseType: 'text' });
+  };
 }

@@ -2,13 +2,13 @@
     <div class="flex-container">
         <div class="results-container">
             <div class="card">
-                <h2>Arterial Tension: {{lastUserATCategory}}</h2>
+                <h2>Arterial Tension: {{lastUserATCategory || 'No data'}}</h2>
             </div>
             <div class="card">
-                <h2>Triglycerides: {{lastUserTRCategory}}</h2>
+                <h2>Triglycerides: {{lastUserTRCategory || 'No data'}}</h2>
             </div>
             <div class="card">
-                <h2>Cholesterol: {{lastUserCOLCategory}}</h2>
+                <h2>Cholesterol: {{lastUserCOLCategory || 'No data'}}</h2>
             </div>
         </div>
         <div class="options">

@@ -10,6 +10,9 @@
             <option value="triglycerides">Triglycerides</option>
             <option value="cholesterol">Cholesterol</option>
         </select>
+        <button mat-mini-fab color="accent" class="delete-button" (click)="openConfirmDialog(selectedTable)">
+            <mat-icon>delete</mat-icon>
+        </button>
     </div>
 
     <table *ngIf="selectedTable === 'bmi'">

@@ -151,7 +151,7 @@ h1 {
 }
 
 .calculator {
-    width: 100%;
+    max-width: 100%;
     box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
     border-radius: 11px;
     overflow: hidden;
@@ -250,6 +250,18 @@ h1 {
     color: #001b00;
     text-align: center;
     margin-bottom: 2rem;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-error {
+    color: red;
+    width: 80%;
+    text-align: center;
 }
 
 .calculator *:focus {

@@ -10,5 +10,6 @@ namespace BACKEND.Interfaces
         Task<BmiDto> CalculateBmiAsync(int height, int weight, string UserName);
         Task<List<BmiDto>> GetBmiResultsForUserAsync(string userId);
         Task<BmiCategoryStatsDto> GetBmiCategoryStatsAsync();
+        Task<int> DeleteUserBmis(string userId);
     }
 }

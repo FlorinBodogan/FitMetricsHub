@@ -21,6 +21,11 @@ namespace BACKEND.Controllers
         {
             var userId = User.GetUserId();
 
+            if (request.Height <= 0 || request.Weight <= 0)
+            {
+                return BadRequest("Height and weight must be greater than zero.");
+            }
+
             int height = request.Height;
             int weight = request.Weight;
 
@@ -60,6 +65,23 @@ namespace BACKEND.Controllers
             {
                 var categoryStats = await _uow.BmiRepository.GetBmiCategoryStatsAsync();
                 return Ok(categoryStats);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpDelete("deleteBMIs")]
+        public async Task<ActionResult> DeleteUserBMIs()
+        {
+            var userId = User.GetUserId();
+
+            try
+            {
+                await _uow.BmiRepository.DeleteUserBmis(userId);
+
+                return Ok("BMI history cleaned.");
             }
             catch (Exception ex)
             {

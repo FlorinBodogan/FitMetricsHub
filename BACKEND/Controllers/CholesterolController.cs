@@ -66,5 +66,21 @@ namespace BACKEND.Controllers
             }
         }
 
+        [HttpDelete("deleteCholesterols")]
+        public async Task<ActionResult> DeleteUserBMIs()
+        {
+            var userId = User.GetUserId();
+
+            try
+            {
+                await _uow.CholesterolRepository.DeleteUserCholesterols(userId);
+
+                return Ok("Cholesterol history cleaned.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
     }
 }

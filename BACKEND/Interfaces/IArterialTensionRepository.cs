@@ -8,5 +8,7 @@ namespace BACKEND.Interfaces
         Task<ArterialTensionDto> CalculateArterialTension(int sbp, int dbp, string userId);
         Task<List<ArterialTensionDto>> GetArterialTensionResultsForUserAsync(string userId);
         Task<ArterialTensionCategoryStatsDto> GetArterialTensionCategoryStatsAsync();
+
+        Task<int> DeleteUserATs(string userId);
     }
 }

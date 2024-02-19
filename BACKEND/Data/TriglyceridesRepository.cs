@@ -114,5 +114,13 @@ namespace BACKEND.Data
             return categoryStats;
         }
 
+        public async Task<int> DeleteUserTriglycerides(string userId)
+        {
+            var userTriglycerides = this.context.Triglycerides.Where(u => u.UserId == userId);
+
+            this.context.RemoveRange(userTriglycerides);
+
+            return await this.context.SaveChangesAsync();
+        }
     }
 }

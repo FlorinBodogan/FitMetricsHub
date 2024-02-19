@@ -131,5 +131,13 @@ namespace BACKEND.Data
             return categoryStats;
         }
 
+        public async Task<int> DeleteUserATs(string userId)
+        {
+            var userATs = this.context.ArterialTensions.Where(u => u.UserId == userId);
+
+            this.context.RemoveRange(userATs);
+
+            return await this.context.SaveChangesAsync();
+        }
     }
 }

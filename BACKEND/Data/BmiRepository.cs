@@ -115,5 +115,22 @@ namespace BACKEND.Data
 
             return categoryStats;
         }
+
+        public async Task<int> DeleteUserBmis(string userId)
+        {
+            var userBmis = this.context.BMIs.Where(u => u.UserId == userId).ToList();
+
+            foreach (var bmi in userBmis.ToList())
+            {
+                if (double.IsInfinity(bmi.Result))
+                {
+                    userBmis.Remove(bmi);
+                }
+            }
+
+            this.context.RemoveRange(userBmis);
+
+            return await this.context.SaveChangesAsync();
+        }
     }
 }

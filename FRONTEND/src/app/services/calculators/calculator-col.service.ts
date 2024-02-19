@@ -26,4 +26,9 @@ export class CalculatorColService {
   getCOLResultsForUser(): Observable<any> {
     return this.http.get(this.baseURL + 'cholesterol/getUserCholesterolResults', this.httpOptions);
   };
+
+  deleteUserCOLs(): Observable<any> {
+    const url = `${this.baseURL}cholesterol/deleteCholesterols`;
+    return this.http.delete(url, { responseType: 'text' });
+  };
 }

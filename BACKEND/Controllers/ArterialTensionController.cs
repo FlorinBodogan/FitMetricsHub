@@ -66,5 +66,21 @@ namespace BACKEND.Controllers
             }
         }
 
+        [HttpDelete("deleteATs")]
+        public async Task<ActionResult> DeleteUserATs()
+        {
+            var userId = User.GetUserId();
+
+            try
+            {
+                await _uow.ArterialTensionRepository.DeleteUserATs(userId);
+
+                return Ok("Arterial tension history cleaned.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
     }
 }

@@ -119,6 +119,12 @@ namespace BACKEND.Controllers
                 return BadRequest("You cannot delete admin");
             }
 
+            await _uow.ArterialTensionRepository.DeleteUserATs(user.Id);
+            await _uow.BmiRepository.DeleteUserBmis(user.Id);
+            await _uow.RmbRepository.DeleteUserRmbs(user.Id);
+            await _uow.TriglyceridesRepository.DeleteUserTriglycerides(user.Id);
+            await _uow.CholesterolRepository.DeleteUserCholesterols(user.Id);
+
             await _userManager.DeleteAsync(user);
             return NoContent();
         }

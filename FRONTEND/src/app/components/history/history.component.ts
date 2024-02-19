@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { CalculatorAtService } from 'src/app/services/calculators/calculator-at.service';
 import { CalculatorBmiService } from 'src/app/services/calculators/calculator-bmi.service';
 import { CalculatorColService } from 'src/app/services/calculators/calculator-col.service';
 import { CalculatorRmbService } from 'src/app/services/calculators/calculator-rmb.service';
 import { CalculatorTrService } from 'src/app/services/calculators/calculator-tr.service';
+import { ConfirmDeleteComponent } from './dialogs/confirm-delete/confirm-delete.component';
 
 @Component({
   selector: 'app-history',
@@ -24,16 +26,21 @@ export class HistoryComponent implements OnInit {
     private rmbService: CalculatorRmbService,
     private atService: CalculatorAtService,
     private colService: CalculatorColService,
-    private triService: CalculatorTrService
+    private triService: CalculatorTrService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
+    this.getUserResults();
+  }
+
+  getUserResults(): void {
     this.getUserATResults();
     this.getUserRMBResults();
     this.getUserBMIResults();
     this.getUserCOLResults();
     this.getUserTRIResults();
-  }
+  };
 
   getUserATResults(): void {
     this.atService.getATResultsForUser().subscribe({
@@ -74,5 +81,20 @@ export class HistoryComponent implements OnInit {
         this.userTR = response
       }
     })
+  };
+
+  openConfirmDialog(selectedTable: string) {
+    const dialogRef = this.dialog.open(ConfirmDeleteComponent, {
+      data: {
+        selectedTable: selectedTable
+      },
+      autoFocus: false
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 'success') {
+        this.getUserResults();
+      }
+    });
   };
 }

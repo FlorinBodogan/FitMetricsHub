@@ -9,5 +9,6 @@ namespace BACKEND.Interfaces
         Task<TriglyceridesDto> CalculateCholesterolAsync(int hdl, int ldl, int cholesterol, string userid);
         Task<List<TriglyceridesDto>> GetTriglyceridesResultsForUserAsync(string userId);
         Task<TriglyceridesCategoryStatsDto> GetTriglyceridesCategoryStatsAsync();
+        Task<int> DeleteUserTriglycerides(string userId);
     }
 }

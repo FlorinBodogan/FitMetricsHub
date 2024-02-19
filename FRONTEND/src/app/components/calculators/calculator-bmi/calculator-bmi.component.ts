@@ -9,12 +9,18 @@ import { CalculatorBmiService } from 'src/app/services/calculators/calculator-bm
 export class CalculatorBmiComponent {
   model: any = {};
   result = '';
+  error = '';
 
   constructor(private calculatorService: CalculatorBmiService) { }
 
   calculateBmi(): void {
     this.calculatorService.calculateBmi(this.model).subscribe({
-      next: response => this.result = response.result
+      next: response => {
+        this.result = response.result
+      },
+      error: err => {
+        this.error = err.error
+      }
     })
   }
 }

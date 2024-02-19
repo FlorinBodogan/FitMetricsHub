@@ -8,14 +8,19 @@ import { CalculatorRmbService } from 'src/app/services/calculators/calculator-rm
 })
 export class CalculatorRmbComponent {
   model: any = {};
-
+  error = '';
   result = '';
 
   constructor(private calculatorService: CalculatorRmbService) { }
 
   calculateRmb(): void {
     this.calculatorService.calculateRmb(this.model).subscribe({
-      next: response => this.result = response.result
+      next: response => {
+        this.result = response.result
+      },
+      error: err => {
+        this.error = err.error
+      }
     })
   }
 }

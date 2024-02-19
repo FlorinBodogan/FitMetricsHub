@@ -26,4 +26,9 @@ export class CalculatorRmbService {
   getRMBResultsForUser(): Observable<any> {
     return this.http.get(this.baseURL + 'rmb/getUserRmbResults', this.httpOptions);
   };
+
+  deleteUserRMBs(): Observable<any> {
+    const url = `${this.baseURL}rmb/deleteRMBs`;
+    return this.http.delete(url, { responseType: 'text' });
+  };
 }

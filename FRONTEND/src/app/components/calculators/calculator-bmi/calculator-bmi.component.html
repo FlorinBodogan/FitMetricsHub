@@ -20,6 +20,8 @@
             <div class="calculator-result">
                 <div class="result">
                     <p *ngIf="result">Result: {{result | number:'1.2-2'}} % body fat</p>
+                    <p *ngIf="error" class="result-error">{{error}}
+                    </p>
                 </div>
             </div>
         </div>

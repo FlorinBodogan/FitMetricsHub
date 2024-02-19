@@ -155,7 +155,8 @@ export class AdminComponent implements OnInit {
           userName: user.userName,
           roles: user.roles
         }
-      }
+      },
+      autoFocus: false
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -172,7 +173,8 @@ export class AdminComponent implements OnInit {
           userName: username,
           userId: userId
         }
-      }
+      },
+      autoFocus: false
     });
 
     dialogRef.afterClosed().subscribe(result => {

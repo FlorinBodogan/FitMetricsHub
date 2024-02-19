@@ -26,4 +26,9 @@ export class CalculatorBmiService {
   getBMIResultsForUser(): Observable<any> {
     return this.http.get(this.baseURL + 'bmi/getUserBmiResults', this.httpOptions);
   };
+
+  deleteUserBMIs(): Observable<any> {
+    const url = `${this.baseURL}bmi/deleteBMIs`;
+    return this.http.delete(url, { responseType: 'text' });
+  };
 }

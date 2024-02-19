@@ -9,5 +9,6 @@ namespace BACKEND.Interfaces
         double CalculateRmbWithActivityLevel(string gender, int height, int weight, int age, string activityLevel);
         Task<RmbDto> CalculateRmbAsync(string gender, int height, int weight, int age, string activityLevel, string userId);
         Task<List<RmbDto>> GetRmbResultsForUserAsync(string userId);
+        Task<int> DeleteUserRmbs(string userId);
     }
 }

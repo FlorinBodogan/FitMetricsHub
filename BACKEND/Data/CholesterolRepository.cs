@@ -107,5 +107,13 @@ namespace BACKEND.Data
             return categoryStats;
         }
 
+        public async Task<int> DeleteUserCholesterols(string userId)
+        {
+            var userCholesterols = this.context.Cholesterols.Where(u => u.UserId == userId);
+
+            this.context.RemoveRange(userCholesterols);
+
+            return await this.context.SaveChangesAsync();
+        }
     }
 }

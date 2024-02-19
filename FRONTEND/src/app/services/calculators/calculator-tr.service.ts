@@ -26,4 +26,9 @@ export class CalculatorTrService {
   getTRIResultsForUser(): Observable<any> {
     return this.http.get(this.baseURL + 'triglycerides/getUserTriglyceridesResults', this.httpOptions);
   };
+
+  deleteUserTRIs(): Observable<any> {
+    const url = `${this.baseURL}triglycerides/deleteTriglyceridess`;
+    return this.http.delete(url, { responseType: 'text' });
+  };
 }

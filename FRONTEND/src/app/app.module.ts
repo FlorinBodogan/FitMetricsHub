@@ -30,6 +30,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { HasRoleDirective } from './directives/has-role.directive';
 import { ConfirmDialogComponent } from './components/admin/dialogs/confirm-dialog/confirm-dialog.component';
 import { EditRolesDialogComponent } from './components/admin/dialogs/edit-roles-dialog/edit-roles-dialog.component';
+import { ConfirmDeleteComponent } from './components/history/dialogs/confirm-delete/confirm-delete.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { EditRolesDialogComponent } from './components/admin/dialogs/edit-roles-
     AdminComponent,
     ConfirmDialogComponent,
     EditRolesDialogComponent,
+    ConfirmDeleteComponent,
   ],
   imports: [
     BrowserModule,

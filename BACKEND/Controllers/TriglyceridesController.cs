@@ -65,5 +65,22 @@ namespace BACKEND.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+
+        [HttpDelete("deleteTriglycerides")]
+        public async Task<ActionResult> DeleteUserBMIs()
+        {
+            var userId = User.GetUserId();
+
+            try
+            {
+                await _uow.TriglyceridesRepository.DeleteUserTriglycerides(userId);
+
+                return Ok("Triglycerides history cleaned.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
     }
 }
